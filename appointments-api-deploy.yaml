@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: appointment-api
+  name: appointment-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appointment-api
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: appointment-api
+    spec:
+      containers:
+      - image: red29/appointments:0.0.1-SNAPSHOT
+        name: appointments
+        resources: {}
+status: {}
